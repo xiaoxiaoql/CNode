@@ -1,0 +1,37 @@
+html{
+	font-size:625%;
+}
+body{
+	margin: 0px;
+	font-family:'微软雅黑';
+	font-size: 0.16rem;
+	color:#4b4b4b;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration:none;
+	color:#4b4b4b;
+}
+.wrap{
+	max-width:900px;
+	margin:auto;
+	min-width:320px
+}
+ul,li,p,h1,h2,h3,h4,h5,h6{
+	margin:0px;
+	padding: 0px;
+}
+.clear::before,
+.clear::after{
+    display:block;
+    clear:both;
+    content: "";
+    height: 0;
+    visibility: hidden;
+}
+input,textarea{
+	outline: none;
+}
+
