@@ -2,20 +2,21 @@
 		.heades{
 			background: #c30163;
 			position: fixed;
+      bottom:0;
 			width:100%;
 			left:0;
 		}
 		.header .aside{
-			/*margin-left: 0.2rem;*/
 			height:0.38rem;
 			line-height: 0.38rem;
 			float: left;
 			width:10%;
 			text-align: center;
+      margin-top: 0.05rem;
 		}
 		.header{
 			color:#fff;
-			height:0.4rem;
+			height:0.5rem;
 			background:#c30163; 
 			width:100%;
 			position:fixed;
@@ -23,14 +24,14 @@
 			left: 0;
 		}
 		.after{
-			height:0.4rem;
+			height:0.5rem;
 		}
 		.header .search{
 			float: left;
 			width:15%;
 			text-align: center;
-			height:0.4rem;
-			line-height: 0.4rem;
+			height:0.5rem;
+			line-height: 0.5rem;
       font-size: 0.3rem;
 		}
    .curent_login {
@@ -61,32 +62,36 @@
 			float: left;
 			width:75%;
 			text-align:center;
+      height:0.5rem;
+      line-height: 0.5rem;
 		}
 		.header h2 a{
-			color:#fff;
+      color:#fff;
+      font-family: '楷体';
+
 		}
 		
   	.public_nav{
   		display:flex;
   		list-style:none;
-		height:0.4rem;
+		height:0.5rem;
 		width:100%;
 		margin: 0;
   	}
-  	.before{
+  	/*.before{
   		height:0.4rem;
-  	}
+  	}*/
   	.public_nav li{
   		flex:1;
   		float:left;
-		height:0.4rem;
+		height:0.5rem;
 		text-align: center;
   	}
   	.public_nav li a{
   		display:inline-block;
   		width: 100%;
-  		height:0.37rem;
-    	line-height:0.37rem;
+  		height:0.47rem;
+    	line-height:0.47rem;
     	color:#fff;
       border-bottom: 3px solid #333;
   	}
@@ -190,14 +195,14 @@
   	}
   	.loadmore{
   		text-align: center;
-  		height:1rem;
-  		line-height: 1rem;
-  		background: #fff;
-
+  		height:1.4rem;
+  		background:#fff;
+     
   	}
   	.loadmore img{
-  		width:1rem;
-  		height: 1rem;
+  		width:1.4rem;
+  		height: 1.4rem;
+    
   	}
 
 	/*详情*/

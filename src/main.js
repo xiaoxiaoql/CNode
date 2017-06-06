@@ -19,7 +19,7 @@ Vue.component('xhead',{
 					<path d="M1536 1344v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zM1536 832v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45zM1536 320v128q0 26-19 45t-45 19h-1408q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h1408q26 0 45 19t19 45z"></path>
 				</svg>
 			</span>
-			<h2><a href='#/index/home/all'>CNode</a></h2>
+			<h2><a href='#/index/home/all'>N社区</a></h2>
 			<div class='search' @click=';logstatus()'><span>...</span></div>
 			
 		</div>
@@ -69,13 +69,12 @@ Vue.component('xheader',{
 	<div class='heades'>
 		<ul class="public_nav">
 			<li :class="{'current':iscurrent==0}" @click='nav(0,"")'><a href="#/index/home/all">全部</a></li>
-			<li :class="{'current':iscurrent==1}" @click='nav(1,"good")'><a href="#/index/home/good">精华</a></li>
-			<li :class="{'current':iscurrent==2}" @click='nav(2,"share")'><a href="#/index/home/share">分享</a></li>
 			<li :class="{'current':iscurrent==3}" @click='nav(3,"ask")'><a href="#/index/home/ask">问答</a></li>
-			<li :class="{'current':iscurrent==4}" @click='nav(4,"job")'><a href="#/index/home/job">招聘</a></li>
+			<li :class="{'current':iscurrent==2}" @click='nav(2,"share")'><a href="#/index/home/share">共享</a></li>
+			<li :class="{'current':iscurrent==1}" @click='nav(1,"good")'><a href="#/index/home/good">精选</a></li>
+			<li :class="{'current':iscurrent==4}" @click='nav(4,"job")'><a href="#/index/home/job">工作</a></li>
 		</ul>
 	</div>
-	<div class='before'></div>
 	</div>
 	`,
 	data:function(){
@@ -147,6 +146,7 @@ Vue.component('xlist',{
 				}
 			})
 		}
+
 	},
 	mounted:function(){
 		this.more();
@@ -314,7 +314,7 @@ var detail=Vue.extend({
 					<div class='re_time'><span>{{res.create_at|times}}</span><span class='zan' @click='clickzan()' :dataes='res.id'>
 						<svg version="1.1" role="presentation" width="13.714285714285714" height="16" viewBox="0 0 1536 1792" class="fa-icon"><path d="M256 1344q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zM1408 768q0-51-39-89.5t-89-38.5h-352q0-58 48-159.5t48-160.5q0-98-32-145t-128-47q-26 26-38 85t-30.5 125.5-59.5 109.5q-22 23-77 91-4 5-23 30t-31.5 41-34.5 42.5-40 44-38.5 35.5-40 27-35.5 9h-32v640h32q13 0 31.5 3t33 6.5 38 11 35 11.5 35.5 12.5 29 10.5q211 73 342 73h121q192 0 192-167 0-26-5-56 30-16 47.5-52.5t17.5-73.5-18-69q53-50 53-119 0-25-10-55.5t-25-47.5q32-1 53.5-47t21.5-81zM1536 767q0 89-49 163 9 33 9 69 0 77-38 144 3 21 3 43 0 101-60 178 1 139-85 219.5t-227 80.5h-36-93q-96 0-189.5-22.5t-216.5-65.5q-116-40-138-40h-288q-53 0-90.5-37.5t-37.5-90.5v-640q0-53 37.5-90.5t90.5-37.5h274q36-24 137-155 58-75 107-128 24-25 35.5-85.5t30.5-126.5 62-108q39-37 90-37 84 0 151 32.5t102 101.5 35 186q0 93-48 192h176q104 0 180 76t76 179z"></path></svg>
 					</span><span class='colores'>{{res.ups.length}}</span>
-					<p class='reply_one'><span @click='replyfn()'>回复</sapn></p>
+					<p class='reply_one'><span @click='replyfn()'>回复</span></p>
 					</div>
 					
 					<div class='input_reply' :reid='res.id'><textarea v-model='sendrepy'></textarea><button @click='send()'>回复</button></div>
@@ -748,9 +748,9 @@ var store=new Vuex.Store({
 Vue.filter('abc',function(input,value){
 	switch(input){
 		case 'ask': return '问答';break;
-		case 'share': return '分享'; break;
-		case 'job': return '招聘';break;
-		case 'good':return '精华';break;
+		case 'share': return '共享'; break;
+		case 'job': return '工作';break;
+		case 'good':return '精选';break;
 		default:
 		return '置顶';
 	}
@@ -783,6 +783,7 @@ Vue.filter('times',function(input,value){
 	}
 	return timevalue;
 })
+
 new Vue({
 	el:'#demo',
 	data:{
