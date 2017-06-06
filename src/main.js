@@ -75,6 +75,7 @@ Vue.component('xheader',{
 			<li :class="{'current':iscurrent==4}" @click='nav(4,"job")'><a href="#/index/home/job">工作</a></li>
 		</ul>
 	</div>
+	<div class='before'></div>
 	</div>
 	`,
 	data:function(){
